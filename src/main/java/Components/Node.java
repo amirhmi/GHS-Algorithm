@@ -1,9 +1,7 @@
 package Components;
-import Events.InitMessage;
-import Events.InitiateMessage;
-import Events.JoinMessage;
-import Events.TestMessage;
+import Events.*;
 import Ports.EdgePort;
+import com.sun.tools.classfile.ConstantPool;
 import misc.Utils;
 import se.sics.kompics.*;
 
@@ -26,7 +24,9 @@ public class Node extends ComponentDefinition {
     public String lastJoinMessageTargetId;
 
     private int numOfTestResponds = 0;
-    private List<TestMessage> lwoe = new ArrayList<>();
+    private List<TestMessage> testResponds = new ArrayList<>();
+
+    private List<TestMessage> initiateResponds = new ArrayList<>();
 
     Handler joinHandler = new Handler<JoinMessage>() {
         @Override
@@ -50,6 +50,7 @@ public class Node extends ComponentDefinition {
                         children.put(event.nodeId, neighbours.get(event.nodeId));
                         System.out.println("node: " + nodeId + ", become root, send initiate trigger");
                         sendInitialMessage(nodeId);
+                        sendTestMessages();
                     } else {
                         fragmentId = event.nodeId;
                         isRoot = false;
@@ -60,7 +61,32 @@ public class Node extends ComponentDefinition {
         }
     };
 
-    Handler testeHandler = new Handler<TestMessage>() {
+    private void checkAndSendInitiateBack() {
+        TestMessage lwoe = null;
+        if(numOfTestResponds == neighbours.size() & initiateResponds.size() == children.size()) {
+            initiateResponds.addAll(testResponds);
+
+            if(initiateResponds.size() > 0) {
+                initiateResponds.sort(Comparator.comparing(TestMessage::getWeight));
+                lwoe = initiateResponds.get(0);
+            }
+
+            if(isRoot == false) {
+                trigger(new InitiateMessage(nodeId, parentId, fragmentId, true, lwoe), sendPort);
+            }
+            else {
+                if(lwoe == null)
+                    return;
+                else {
+                    isRoot = false;
+                    System.out.println("nodeId " + nodeId + ", change root send for: " + lwoe.targetNodeId);
+                    sendChangeRoot(lwoe);
+                }
+            }
+        }
+    }
+
+    Handler testHandler = new Handler<TestMessage>() {
         @Override
         public void handle(TestMessage event) {
             if (nodeId.equalsIgnoreCase(event.targetNodeId)) {
@@ -83,11 +109,8 @@ public class Node extends ComponentDefinition {
                             event.nodeId + " accept: " + event.isAccept);
                     numOfTestResponds += 1;
                     if(event.isAccept)
-                        lwoe.add(event);
-                    if(numOfTestResponds == neighbours.size()) {
-                        lwoe.sort(Comparator.comparing(TestMessage::getWeight));
-                        System.out.println(lwoe.get(0).nodeId + ' ' + lwoe.get(0).weight);
-                    }
+                        testResponds.add(event);
+                    checkAndSendInitiateBack();
                 }
             }
         }
@@ -97,13 +120,47 @@ public class Node extends ComponentDefinition {
         @Override
         public void handle(InitiateMessage event) {
             if (nodeId.equalsIgnoreCase(event.targetNodeId)) {
-                System.out.println("node: " + nodeId + ", recieve initiate message");
-                sendInitialMessage(event.rootId);
+                if(event.isRespond == false) {
+                    System.out.println("node: " + nodeId + ", recieve initiate message");
 
-                sendTestMessages();
+                    if(children.containsKey(nodeId))
+                        children.remove(nodeId);
+                    parentId = event.nodeId;
+
+                    sendInitialMessage(event.rootId);
+
+                    sendTestMessages();
+                }
+                else {
+                    System.out.println("node: " + nodeId + ", recieve initiate respond message from: "
+                            + event.nodeId);
+                    initiateResponds.add(event.lwoe);
+
+                    checkAndSendInitiateBack();
+                }
             }
         }
     };
+
+    Handler changeRootHandler = new Handler<ChangeRoot>() {
+        @Override
+        public void handle(ChangeRoot event) {
+            if (nodeId.equalsIgnoreCase(event.targetNodeId)) {
+                if(event.lwoe.targetNodeId == nodeId) {
+                    //TODO: Send join message
+                }
+                else {
+                    children.put(nodeId, neighbours.get(nodeId));
+                    sendChangeRoot(event.lwoe);
+                }
+            }
+        }
+    };
+
+    private void sendChangeRoot(TestMessage lwoe) {
+        for(Map.Entry<String, Integer> entry: children.entrySet())
+            trigger(new ChangeRoot(nodeId, entry.getKey(), lwoe), sendPort);
+    }
 
     private void sendTestMessages() {
         for(Map.Entry<String, Integer> entry: neighbours.entrySet()) {
@@ -114,7 +171,7 @@ public class Node extends ComponentDefinition {
 
     private void sendInitialMessage(String rootId) {
         for(Map.Entry<String, Integer> entry: children.entrySet())
-            trigger(new InitiateMessage(entry.getKey(), rootId), sendPort);
+            trigger(new InitiateMessage(nodeId, entry.getKey(), rootId, false, null), sendPort);
     }
 
 
@@ -139,7 +196,8 @@ public class Node extends ComponentDefinition {
         subscribe(startHandler, control);
         subscribe(joinHandler,recievePort);
         subscribe(initiateHandler,recievePort);
-        subscribe(testeHandler,recievePort);
+        subscribe(testHandler,recievePort);
+        subscribe(changeRootHandler,recievePort);
     }
 }
 
