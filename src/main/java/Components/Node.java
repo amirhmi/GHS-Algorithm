@@ -44,6 +44,8 @@ public class Node extends ComponentDefinition {
                 }
                 else {
                     System.out.println("node: " + nodeId + ", join respond message recieved from " + event.nodeId);
+                    if(level < event.level)
+                        level = event.level;
                     if (nodeId.compareToIgnoreCase(event.nodeId) > 0) {
                         fragmentId = nodeId;
                         isRoot = true;
@@ -91,7 +93,8 @@ public class Node extends ComponentDefinition {
         public void handle(TestMessage event) {
             if (nodeId.equalsIgnoreCase(event.targetNodeId)) {
                 if(event.isRespond == false) {
-                    System.out.println("node: " + nodeId + ", recieve test message from " + event.nodeId);
+                    System.out.println("node: " + nodeId + ", recieve test message from " + event.nodeId
+                    + " ownFID: " + fragmentId + " eventFID: " + event.fragmentId);
                     if(event.fragmentId == fragmentId) {
                         trigger(new TestMessage(nodeId, event.nodeId, fragmentId, level,
                                 true, false, event.weight), sendPort);
@@ -146,13 +149,16 @@ public class Node extends ComponentDefinition {
         @Override
         public void handle(ChangeRoot event) {
             if (nodeId.equalsIgnoreCase(event.targetNodeId)) {
+                System.out.println("node: " + nodeId + " change root recieved");
                 if(event.lwoe.targetNodeId == nodeId) {
-                    //TODO: Send join message
+                    System.out.println("node: " + nodeId + ", send join message to: " + event.lwoe.nodeId);
+                    lastJoinMessageTargetId = event.lwoe.nodeId;
+                    trigger(new JoinMessage(lastJoinMessageTargetId, nodeId, level, false), sendPort);
                 }
                 else {
-                    children.put(nodeId, neighbours.get(nodeId));
                     sendChangeRoot(event.lwoe);
                 }
+                children.put(event.nodeId, neighbours.get(event.nodeId));
             }
         }
     };
