@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af3a7eda-abb1-4199-9761-a30abbf20d21" name="Default Changelist" comment="">
+    <list default="true" id="af3a7eda-abb1-4199-9761-a30abbf20d21" name="Default Changelist" comment="fix change parent and children node in initiateHandler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Components/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Components/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Events/TestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Events/TestMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tables.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Components/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Components/Node$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Components/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Events/TestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Events/TestMessage.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575612677373</updated>
-      <workItem from="1575612680252" duration="22997000" />
+      <workItem from="1575612680252" duration="31243000" />
     </task>
     <task id="LOCAL-00001" summary="GHS messages added,&#10;Create graph from text file added">
       <created>1575620839580</created>
@@ -130,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575644434693</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix change parent and children node in initiateHandler">
+      <created>1575644986924</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575644986924</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +158,7 @@
     <MESSAGE value="Initiate, Test message handler added" />
     <MESSAGE value="Changeroot message added" />
     <MESSAGE value="Test and Debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test and Debug" />
+    <MESSAGE value="fix change parent and children node in initiateHandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix change parent and children node in initiateHandler" />
   </component>
 </project>

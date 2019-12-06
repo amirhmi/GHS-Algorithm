@@ -7,7 +7,7 @@ public class TestMessage implements KompicsEvent {
     public String nodeId;
     public String targetNodeId;
     public String fragmentId;
-    public int lavel;
+    public int level;
     public boolean isRespond;
     public boolean isAccept;
     public int weight;
@@ -17,7 +17,7 @@ public class TestMessage implements KompicsEvent {
         this.nodeId = nodeId;
         this.targetNodeId = targetNodeId;
         this.fragmentId = fragmentId;
-        this.lavel = lavel;
+        this.level = lavel;
         this.isRespond = isRespond;
         this.isAccept = isAccept;
         this.weight = weight;
