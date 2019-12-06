@@ -7,14 +7,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class InitMessage extends Init<Node> {
-    public String nodeName;
-    public boolean isRoot = false;
+    public String nodeId;
     public HashMap<String,Integer> neighbours = new HashMap<>();
 
-    public InitMessage(String nodeName, boolean isRoot,
-                       HashMap<String,Integer> neighbours) {
-        this.nodeName = nodeName;
-        this.isRoot = isRoot;
+    public InitMessage(String nodeId, HashMap<String,Integer> neighbours) {
+        this.nodeId = nodeId;
         this.neighbours = neighbours;
     }
 }

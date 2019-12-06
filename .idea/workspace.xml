@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af3a7eda-abb1-4199-9761-a30abbf20d21" name="Default Changelist" comment="" />
+    <list default="true" id="af3a7eda-abb1-4199-9761-a30abbf20d21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Events/InitiateMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Components/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Components/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Events/InitMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Events/InitMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Events/ReportMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Events/TestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Events/RoutingMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ports/EdgePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ports/EdgePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/misc/TableRow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tables.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Components/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Components/Node$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Components/Node$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Components/Node$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Components/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Events/InitMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Events/InitMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Events/ReportMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Events/RoutingMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ports/EdgePort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ports/EdgePort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/misc/TableRow.class" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Ub5uZBgLfZqO0P1EqEcKXaOZTr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
@@ -26,8 +62,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Kompics">
+    <configuration name="Kompics" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Components.App" />
       <module name="dsca1" />
       <method v="2">
@@ -58,7 +94,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.Kompics" />
       <item itemvalue="Maven.dsca1" />
     </list>
   </component>
@@ -72,8 +108,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575612677373</updated>
-      <workItem from="1575612680252" duration="2287000" />
+      <workItem from="1575612680252" duration="5070000" />
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
