@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Components/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tables.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Components/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Components/Node$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Components/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575612677373</updated>
-      <workItem from="1575612680252" duration="22376000" />
+      <workItem from="1575612680252" duration="22997000" />
     </task>
     <task id="LOCAL-00001" summary="GHS messages added,&#10;Create graph from text file added">
       <created>1575620839580</created>
@@ -124,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575642645955</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Test and Debug">
+      <created>1575644434693</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575644434693</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +149,7 @@
     <MESSAGE value="find lwoe for level 0 nodes on start handler" />
     <MESSAGE value="Initiate, Test message handler added" />
     <MESSAGE value="Changeroot message added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changeroot message added" />
+    <MESSAGE value="Test and Debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test and Debug" />
   </component>
 </project>

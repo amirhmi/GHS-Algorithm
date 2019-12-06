@@ -93,8 +93,6 @@ public class Node extends ComponentDefinition {
         public void handle(TestMessage event) {
             if (nodeId.equalsIgnoreCase(event.targetNodeId)) {
                 if(event.isRespond == false) {
-                    System.out.println("node: " + nodeId + ", recieve test message from " + event.nodeId
-                    + " ownFID: " + fragmentId + " eventFID: " + event.fragmentId);
                     if(event.fragmentId == fragmentId) {
                         trigger(new TestMessage(nodeId, event.nodeId, fragmentId, level,
                                 true, false, event.weight), sendPort);
@@ -123,11 +121,12 @@ public class Node extends ComponentDefinition {
         @Override
         public void handle(InitiateMessage event) {
             if (nodeId.equalsIgnoreCase(event.targetNodeId)) {
+                fragmentId = event.rootId;
                 if(event.isRespond == false) {
                     System.out.println("node: " + nodeId + ", recieve initiate message");
 
-                    if(children.containsKey(nodeId))
-                        children.remove(nodeId);
+                    if(children.containsKey(event.nodeId))
+                        children.remove(event.nodeId);
                     parentId = event.nodeId;
 
                     sendInitialMessage(event.rootId);
@@ -176,6 +175,7 @@ public class Node extends ComponentDefinition {
     }
 
     private void sendInitialMessage(String rootId) {
+        System.out.println("send initiate messages " + nodeId + " " +children);
         for(Map.Entry<String, Integer> entry: children.entrySet())
             trigger(new InitiateMessage(nodeId, entry.getKey(), rootId, false, null), sendPort);
     }
