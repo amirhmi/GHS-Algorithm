@@ -31,7 +31,7 @@ public class App extends ComponentDefinition {
     public static void main(String[] args) throws InterruptedException{
         Kompics.createAndStart(App.class);
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException ex) {
             System.exit(1);
         }

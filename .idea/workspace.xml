@@ -5,9 +5,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Components/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Components/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Events/InitiateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Events/InitiateMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Events/JoinMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Events/JoinMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Events/TestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Events/TestMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Components/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Components/Node$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Components/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Components/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Events/InitiateMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Events/InitiateMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Events/JoinMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Events/JoinMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Events/TestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Events/TestMessage.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575612677373</updated>
-      <workItem from="1575612680252" duration="6721000" />
+      <workItem from="1575612680252" duration="16488000" />
     </task>
     <task id="LOCAL-00001" summary="GHS messages added,&#10;Create graph from text file added">
       <created>1575620839580</created>
@@ -102,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575620839580</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="find lwoe for level 0 nodes on start handler">
+      <created>1575622656946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575622656946</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GHS messages added,&#10;Create graph from text file added" />
-    <option name="LAST_COMMIT_MESSAGE" value="GHS messages added,&#10;Create graph from text file added" />
+    <MESSAGE value="find lwoe for level 0 nodes on start handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="find lwoe for level 0 nodes on start handler" />
   </component>
 </project>
